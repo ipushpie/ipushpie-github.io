@@ -1,16 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Resume</title>
-    <style>
-        body { margin: 0; padding: 0; height: 100vh; }
-        embed { width: 100%; height: 100%; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pushpender's Resume</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+:root {
+    --bg-color: #121212;
+    --primary-color: #1a1d24;
+    --secondary-color: #1f2229;
+    --accent-color: #00aaff;
+    --text-color: #e0e0e0;
+    --subtle-text: #a0a0a0;
+    --glow-color: rgba(0, 170, 255, 0.5);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow-x:hidden;
+    line-height:1.6;
+}
+
+#particles-js {
+    position: fixed; width:100%; height:100%; top:0; left:0; z-index:-1; background-color: var(--bg-color);
+}
+
+.container { max-width:900px; margin:0 auto; padding:2rem; text-align:center; }
+
+header { padding:4rem 0 2rem 0; animation: fadeInDown 1s ease-out; }
+
+header h1 { font-family:'Poppins', sans-serif; font-size:3rem; font-weight:600; margin-bottom:0.5rem; letter-spacing:1px; }
+
+.typewriter { display:inline-block; border-right:3px solid var(--accent-color); white-space:nowrap; overflow:hidden; animation: typing 3s steps(30,end), blink-caret .75s step-end infinite; }
+
+header p { font-size:1.25rem; color: var(--subtle-text); margin-bottom:2rem; }
+
+header p span { display:inline-block; animation:bounce 1s infinite; }
+
+.contact-links a { color: var(--subtle-text); font-size:1.5rem; margin:0 1rem; transition: all 0.3s ease; position:relative; }
+.contact-links a:hover { color: var(--accent-color); transform: rotate(-15deg) scale(1.3); }
+
+main { padding:2rem 0; animation: fadeInUp 1s ease-out 0.5s; animation-fill-mode:backwards; }
+
+.pdf-container {
+    width:100%; max-width:800px; height:80vh; background: var(--primary-color); border:1px solid var(--secondary-color);
+    border-radius:12px; box-shadow:0 20px 60px rgba(0,170,255,0.4),0 0 50px rgba(255,255,255,0.2); overflow:hidden; margin:0 auto 2rem auto;
+    transform: rotateX(10deg) rotateY(10deg); transition: all 0.5s ease;
+}
+.pdf-container:hover { transform: rotateX(0deg) rotateY(0deg) scale(1.05); box-shadow:0 30px 80px rgba(0,170,255,0.6),0 0 60px rgba(255,255,255,0.3); }
+
+embed { width:100%; height:100%; border:none; }
+
+.download-link {
+    display:inline-flex; align-items:center; gap:0.75rem; padding:1rem 2rem; background:transparent;
+    color: var(--accent-color); border:2px solid var(--accent-color); border-radius:50px; text-decoration:none;
+    font-weight:700; font-size:1.1rem; letter-spacing:0.5px; box-shadow:0 0 15px rgba(0,170,255,0); transition: all 0.3s ease;
+}
+.download-link:hover { background:var(--accent-color); color:var(--primary-color); box-shadow:0 0 25px var(--glow-color); transform:translateY(-3px); animation: wiggle 0.5s ease-in-out; }
+
+.fallback-link { margin-top:1rem; color:var(--subtle-text); }
+.fallback-link a { color:var(--accent-color); text-decoration:none; font-weight:bold; }
+.fallback-link a:hover { text-decoration:underline; }
+
+footer { padding:2rem 0; color: var(--subtle-text); font-size:0.9rem; animation:fadeIn 1s ease-out 1s; animation-fill-mode:backwards; }
+
+/* Keyframes */
+@keyframes fadeInDown { from{opacity:0; transform:translateY(-30px);} to{opacity:1; transform:translateY(0);} }
+@keyframes fadeInUp { from{opacity:0; transform:translateY(30px);} to{opacity:1; transform:translateY(0);} }
+@keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
+@keyframes typing { from{width:0} to{width:100%} }
+@keyframes blink-caret { from,to{border-color:transparent} 50%{border-color:var(--accent-color);} }
+@keyframes bounce { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-10px);} }
+@keyframes wiggle { 0%,100%{transform:rotate(0deg);} 25%{transform:rotate(5deg);} 75%{transform:rotate(-5deg);} }
+
+@media(max-width:768px){
+    header h1{font-size:2rem;}
+    header p{font-size:1rem;}
+    .pdf-container{height:70vh;}
+    .download-link{padding:0.8rem 1.5rem; font-size:1rem;}
+}
+</style>
 </head>
+
 <body>
+<div id="particles-js"></div>
+
+<div class="container">
+<header>
+    <h1><span class="typewriter">Hi, I'm Pushpender.</span></h1>
+    <p>Yes, I code. No, I don't debug my own life <span>😂</span></p>
+    <div class="contact-links">
+        <a href="#" title="Connect with me before my coffee wears off!"><i class="fab fa-linkedin"></i></a>
+        <a href="#" title="Peek at my messy GitHub!"><i class="fab fa-github"></i></a>
+        <a href="mailto:youremail@example.com" title="Send me digital cookies"><i class="fas fa-envelope"></i></a>
+    </div>
+</header>
+
+<main>
+<div class="pdf-container">
     <embed src="Pushpender_resume.pdf" type="application/pdf">
-    <p>If the PDF doesn't display, <a href="Pushpender_resume.pdf">download it here</a>.</p>
+</div>
+
+<a class="download-link" href="Pushpender_resume.pdf" download>
+    <i class="fas fa-download"></i> Grab my resume (before I change my mind!)
+</a>
+
+<p class="fallback-link">If the PDF doesn't display, <a href="Pushpender_resume.pdf">click here to view it directly</a>.</p>
+</main>
+
+<footer>
+&copy; 2025 Pushpender. Made with 💻, ☕, and a pinch of chaos.
+</footer>
+</div>
+
+<script src="particles.min.js"></script>
+<script>
+particlesJS("particles-js", {
+  "particles": {
+    "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+    "color": { "value": "#ffffff" },
+    "shape": { "type": "circle" },
+    "opacity": { "value": 0.5 },
+    "size": { "value": 3, "random": true },
+    "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.2, "width": 1 },
+    "move": { "enable": true, "speed": 2, "direction": "none", "out_mode": "out", "bounce": false }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": { "onhover": { "enable": true, "mode": "repulse" }, "onclick": { "enable": true, "mode": "push" }, "resize": true },
+    "modes": { "repulse": { "distance":100, "duration":0.4 }, "push": { "particles_nb":4 } }
+  },
+  "retina_detect": true
+});
+</script>
 </body>
 </html>
